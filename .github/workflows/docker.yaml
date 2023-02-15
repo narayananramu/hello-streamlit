@@ -10,3 +10,6 @@ jobs:
         -   name: Echo Release Version Number
             run: |
                 echo "Release Version Number is ${{ github.event.release.tag_name }}"
+        -   name: Echo Commit Number
+            run: |
+                echo ${{ github.sha }}
