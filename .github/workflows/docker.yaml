@@ -13,3 +13,8 @@ jobs:
         -   name: Echo Commit Number
             run: |
                 echo ${{ github.sha }}
+        -   name: Read SHA
+            run: echo "SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+        -   name: Echo SHA
+            run: |
+                echo ${{ env.SHA }}
