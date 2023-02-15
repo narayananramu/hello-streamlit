@@ -7,6 +7,8 @@ jobs:
     deploy:
         runs-on: ubuntu-latest
         steps:
+        -   name: Checkout
+            uses: actions/checkout@v3
         -   name: Read SHA
             run: echo "SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
         -   name: Echo SHA
