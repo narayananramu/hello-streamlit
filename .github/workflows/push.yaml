@@ -1,0 +1,14 @@
+name: Push
+on:
+    push:
+        branches:
+        -  main
+jobs:
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+        -   name: Read SHA
+            run: echo "SHA=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+        -   name: Echo SHA
+            run: |
+                echo ${{ env.SHA }}
